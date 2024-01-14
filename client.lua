@@ -1,0 +1,11 @@
+ESX = exports["es_extended"]:getSharedObject()
+
+RegisterNetEvent('semtex:emotjee')
+AddEventHandler('semtex:emotjee', function(playerId)
+    local playerPed = PlayerPedId()
+    TaskStartScenarioInPlace(playerPed, 'CODE_HUMAN_MEDIC_KNEEL', Semtex.Tijd, false)
+    ESX.ShowNotification("Wapentint op wapen zetten...")
+    Wait(Semtex.Tijd)
+    ClearPedTasksImmediately(playerPed)
+    ESX.ShowNotification("Je hebt nu een kleur op je wapen!")
+end)
